@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,18 +20,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-hT-geM">
-                                <rect key="frame" x="20" y="80" width="560" height="81"/>
+                                <rect key="frame" x="20" y="80" width="560" height="410"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-Ig-J30">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVs-J8-FiO">
                                         <rect key="frame" x="0.0" y="21" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="es6-05-QiB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="es6-05-QiB"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQg-xA-t0V">
                                         <rect key="frame" x="0.0" y="51" width="151" height="30"/>
@@ -39,15 +48,39 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNn-Ev-Wpn"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="eGm-ts-Fzg">
+                                        <rect key="frame" x="0.0" y="81" width="329" height="329"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="329" id="Mxq-CN-DPC"/>
+                                            <constraint firstAttribute="width" constant="329" id="Vc5-gu-wxB"/>
+                                            <constraint firstAttribute="width" secondItem="eGm-ts-Fzg" secondAttribute="height" multiplier="329:211" id="e64-im-w5a"/>
+                                            <constraint firstAttribute="width" constant="329" id="mEX-4A-Xsd"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Vc5-gu-wxB"/>
+                                                <exclude reference="e64-im-w5a"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QUu-6b-cHv" appends="YES" id="HET-Md-bWi"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xVs-J8-FiO" firstAttribute="leading" secondItem="pXC-hT-geM" secondAttribute="leading" id="Wl3-Iy-swr"/>
+                                    <constraint firstItem="eGm-ts-Fzg" firstAttribute="top" secondItem="RQg-xA-t0V" secondAttribute="bottom" id="PIs-tL-Tla"/>
+                                    <constraint firstItem="eGm-ts-Fzg" firstAttribute="top" secondItem="RQg-xA-t0V" secondAttribute="bottom" id="YTB-B5-50Z"/>
                                     <constraint firstItem="xVs-J8-FiO" firstAttribute="top" secondItem="bK9-Ig-J30" secondAttribute="bottom" constant="12" id="Zqn-5P-qTT"/>
-                                    <constraint firstAttribute="trailing" secondItem="xVs-J8-FiO" secondAttribute="trailing" id="hmX-ds-gwB"/>
+                                    <constraint firstAttribute="trailing" secondItem="xVs-J8-FiO" secondAttribute="trailing" id="hCz-gb-OEU"/>
+                                    <constraint firstItem="eGm-ts-Fzg" firstAttribute="top" secondItem="RQg-xA-t0V" secondAttribute="bottom" id="l2O-Du-Ynd"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Zqn-5P-qTT"/>
+                                        <exclude reference="PIs-tL-Tla"/>
+                                        <exclude reference="YTB-B5-50Z"/>
+                                        <exclude reference="l2O-Du-Ynd"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -55,24 +88,41 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pXC-hT-geM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="350-X0-Ict"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pXC-hT-geM" secondAttribute="trailing" id="39u-Pf-UgG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eGm-ts-Fzg" secondAttribute="leading" id="Clx-jl-dGZ"/>
                             <constraint firstItem="pXC-hT-geM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="PoS-XV-Kaa"/>
-                            <constraint firstItem="pXC-hT-geM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pRa-DB-5Dl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pXC-hT-geM" secondAttribute="trailing" id="zc1-Qa-Ru5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pXC-hT-geM" secondAttribute="leading" id="Ucd-iV-De0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eGm-ts-Fzg" secondAttribute="leading" id="eci-th-vaC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eGm-ts-Fzg" secondAttribute="leading" id="pTa-Jz-zdI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eGm-ts-Fzg" secondAttribute="leading" id="t8J-RI-8dt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="350-X0-Ict"/>
+                                <exclude reference="Clx-jl-dGZ"/>
+                                <exclude reference="eci-th-vaC"/>
+                                <exclude reference="pTa-Jz-zdI"/>
+                                <exclude reference="t8J-RI-8dt"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="bK9-Ig-J30" id="81H-TQ-sGD"/>
+                        <outlet property="photoImageView" destination="eGm-ts-Fzg" id="w6E-LS-Hq1"/>
                         <outlet property="textField" destination="xVs-J8-FiO" id="IPq-l1-khj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QUu-6b-cHv">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="PIP-LP-juP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="517" y="538"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default_image" width="225" height="225"/>
+    </resources>
 </document>
