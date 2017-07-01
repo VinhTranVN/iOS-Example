@@ -27,7 +27,6 @@
                                 <state key="normal" title="Go to Main Screen"/>
                                 <connections>
                                     <action selector="btnGoToMain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sYp-sc-Zto"/>
-                                    <segue destination="xih-LC-mci" kind="show" id="IXg-4S-tVA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,6 +61,13 @@
                                     <segue destination="kQY-df-N2U" kind="show" id="I2R-bP-yW7"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxz-SL-XG9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Login Screen" id="ofG-iY-YIh"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -71,7 +77,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YzM-EU-7G7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="-27"/>
+            <point key="canvasLocation" x="1238" y="-282"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="kIT-5G-bRF">
+            <objects>
+                <viewController id="aV9-hR-css" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wOv-Lm-Phh"/>
+                        <viewControllerLayoutGuide type="bottom" id="WRn-Sr-SAQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hR-E8-sQb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4bk-OJ-tMm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Register Screen" id="Xpe-qh-Q6M"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="DJ5-PH-jM6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ER6-YT-TWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5999999999999" y="662.51874062968523"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="XG8-aL-Rr6">
