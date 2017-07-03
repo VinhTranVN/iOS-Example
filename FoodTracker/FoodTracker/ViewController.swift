@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hide keyboard
         textField.resignFirstResponder()
+        
         return true
     }
     
