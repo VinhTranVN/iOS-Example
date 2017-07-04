@@ -52,7 +52,7 @@ class StartViewController: UIViewController {
         
         textSend = mTextInput.text!
         print(">>> prepare \(textSend)")
-        //var destination = segue.destination
+        //var destination = segue.destination as! StartViewController
         //var from = segue.source
     }
     
