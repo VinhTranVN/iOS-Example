@@ -29,12 +29,6 @@
                                     <action selector="btnGoToMain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sYp-sc-Zto"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nda-Sc-Gbv">
-                                <rect key="frame" x="16" y="91" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AD-YY-w2v">
                                 <rect key="frame" x="16" y="217" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,16 +44,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nda-Sc-Gbv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="1FI-9C-bb7"/>
                             <constraint firstItem="fed-sQ-dJn" firstAttribute="centerX" secondItem="6AD-YY-w2v" secondAttribute="centerX" id="2y6-e5-HzI"/>
                             <constraint firstItem="g1X-QK-YmQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5fs-rZ-qHl"/>
-                            <constraint firstItem="nda-Sc-Gbv" firstAttribute="leading" secondItem="6AD-YY-w2v" secondAttribute="leading" id="KLH-B4-b8Q"/>
-                            <constraint firstItem="nda-Sc-Gbv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cWF-Ok-vN1"/>
+                            <constraint firstItem="6AD-YY-w2v" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cUo-QV-g5Q"/>
                             <constraint firstItem="6AD-YY-w2v" firstAttribute="centerX" secondItem="g1X-QK-YmQ" secondAttribute="centerX" id="dgn-FR-hP9"/>
-                            <constraint firstItem="nda-Sc-Gbv" firstAttribute="trailing" secondItem="6AD-YY-w2v" secondAttribute="trailing" id="ii0-fy-mgK"/>
+                            <constraint firstItem="fed-sQ-dJn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="h1x-Ot-rlO"/>
                             <constraint firstItem="6AD-YY-w2v" firstAttribute="top" secondItem="fed-sQ-dJn" secondAttribute="bottom" constant="32" id="jxO-UJ-cPn"/>
-                            <constraint firstItem="nda-Sc-Gbv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kqM-DD-bOH"/>
-                            <constraint firstItem="fed-sQ-dJn" firstAttribute="top" secondItem="nda-Sc-Gbv" secondAttribute="bottom" constant="33" id="xFQ-9i-bFx"/>
+                            <constraint firstItem="g1X-QK-YmQ" firstAttribute="top" secondItem="6AD-YY-w2v" secondAttribute="bottom" constant="80" id="mAe-1N-X5V"/>
+                            <constraint firstItem="6AD-YY-w2v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sEq-XN-Oob"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Start Screen" id="LnX-fo-sJW">
@@ -68,7 +60,6 @@
                     <connections>
                         <outlet property="mRoleName" destination="6AD-YY-w2v" id="OnZ-Tp-ekX"/>
                         <outlet property="mSwitchRole" destination="fed-sQ-dJn" id="b7Q-5I-BSO"/>
-                        <outlet property="mTextInput" destination="nda-Sc-Gbv" id="1zX-lP-69N"/>
                         <segue destination="DqM-hG-6ZZ" kind="show" identifier="gotoRegisterSegue" id="wxG-63-k9e"/>
                         <segue destination="cMU-3T-fNV" kind="show" identifier="gotoLoginSegue" id="pNd-g8-hry"/>
                     </connections>

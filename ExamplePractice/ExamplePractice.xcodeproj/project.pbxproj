@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D83635411F0CA1DA00EB8FE0 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D84715851F063D9000DA98BD /* Main.storyboard */,
+				D847158A1F063D9000DA98BD /* LaunchScreen.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
 		D84715751F063D9000DA98BD = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +110,10 @@
 		D84715801F063D9000DA98BD /* ExamplePractice */ = {
 			isa = PBXGroup;
 			children = (
+				D83635411F0CA1DA00EB8FE0 /* storyboards */,
 				D84715811F063D9000DA98BD /* AppDelegate.swift */,
 				D84715831F063D9000DA98BD /* StartViewController.swift */,
-				D84715851F063D9000DA98BD /* Main.storyboard */,
 				D84715881F063D9000DA98BD /* Assets.xcassets */,
-				D847158A1F063D9000DA98BD /* LaunchScreen.storyboard */,
 				D847158D1F063D9000DA98BD /* Info.plist */,
 				D836353D1F0B79EB00EB8FE0 /* LoginViewController.swift */,
 				D836353F1F0B87FA00EB8FE0 /* MainViewController.swift */,
@@ -431,6 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vlab.ExamplePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vlab.ExamplePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

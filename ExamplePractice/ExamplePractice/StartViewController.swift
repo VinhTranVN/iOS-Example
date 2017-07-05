@@ -48,14 +48,5 @@ class StartViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        textSend = mTextInput.text!
-        print(">>> prepare \(textSend)")
-        //var destination = segue.destination as! StartViewController
-        //var from = segue.source
-    }
-    
-    
 }
 

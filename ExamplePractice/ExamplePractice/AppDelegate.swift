@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("applicationWillTerminate")
     }
 
-
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+    }
 }
 
