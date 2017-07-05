@@ -1,0 +1,2 @@
+# request API
+github "daltoniam/SwiftHTTP" ~> 2.0.0
