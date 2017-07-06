@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         if userName.text == "vinh", password.text == "123" {
             mLoadingView.startAnimating()
             do {
-                let opt = try HTTP.GET("http://demo5073670.mockable.io/login")
+                let opt = try HTTP.GET("http://595df587d7210a0011ddabc6.mockapi.io/api/login")
                 opt.start { response in
                     if let err = response.error {
                         print(">>> error: \(err.localizedDescription)")
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                         DispatchQueue.main.async {
                             if isSuccess {
                                 let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-                                mainVC.mUserName = self.userName.text!
+                                mainVC.mUserName = data["full_name"].stringValue
                                 
                                 self.navigationController?.show(mainVC, sender: nil)
                             } else{
