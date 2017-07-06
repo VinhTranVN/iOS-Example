@@ -14,6 +14,8 @@
 		D84715891F063D9000DA98BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84715881F063D9000DA98BD /* Assets.xcassets */; };
 		D84715971F063D9000DA98BD /* ExamplePracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84715961F063D9000DA98BD /* ExamplePracticeTests.swift */; };
 		D84715A21F063D9000DA98BD /* ExamplePracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84715A11F063D9000DA98BD /* ExamplePracticeUITests.swift */; };
+		D848B5651F0E319B0093C718 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D848B5641F0E319B0093C718 /* SwiftyJSON.framework */; };
+		D848B5661F0E319B0093C718 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D848B5641F0E319B0093C718 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D849A5EC1F0D42E8007C176D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5E81F0D42E8007C176D /* LaunchScreen.storyboard */; };
 		D849A5ED1F0D42E8007C176D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5EA1F0D42E8007C176D /* Main.storyboard */; };
 		D8F158981F0CE7ED000B47C9 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */; };
@@ -44,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D848B5661F0E319B0093C718 /* SwiftyJSON.framework in Embed Frameworks */,
 				D8F158991F0CE7ED000B47C9 /* SwiftHTTP.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -65,6 +68,7 @@
 		D847159D1F063D9000DA98BD /* ExamplePracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamplePracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84715A11F063D9000DA98BD /* ExamplePracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePracticeUITests.swift; sourceTree = "<group>"; };
 		D84715A31F063D9000DA98BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D848B5641F0E319B0093C718 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		D849A5E91F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D849A5EB1F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = Carthage/Build/iOS/SwiftHTTP.framework; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D848B5651F0E319B0093C718 /* SwiftyJSON.framework in Frameworks */,
 				D8F158981F0CE7ED000B47C9 /* SwiftHTTP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,10 +137,10 @@
 				D81C18891F0CFA1E0029C462 /* storyboards */,
 				D84715811F063D9000DA98BD /* AppDelegate.swift */,
 				D84715831F063D9000DA98BD /* StartViewController.swift */,
-				D84715881F063D9000DA98BD /* Assets.xcassets */,
 				D847158D1F063D9000DA98BD /* Info.plist */,
 				D836353D1F0B79EB00EB8FE0 /* LoginViewController.swift */,
 				D836353F1F0B87FA00EB8FE0 /* MainViewController.swift */,
+				D84715881F063D9000DA98BD /* Assets.xcassets */,
 			);
 			path = ExamplePractice;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		D8F158961F0CE7BE000B47C9 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D848B5641F0E319B0093C718 /* SwiftyJSON.framework */,
 				D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */,
 			);
 			name = frameworks;

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftHTTP
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +17,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var lbErrorMsg: UILabel!
+    
+    @IBOutlet weak var mLoadingView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +36,35 @@ class LoginViewController: UIViewController {
         print(">>> LoginViewController doLogin")
         
         if userName.text == "vinh", password.text == "123" {
-            let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-            mainVC.mUserName = userName.text!
-            
-            navigationController?.show(mainVC, sender: nil)
+            mLoadingView.startAnimating()
+            do {
+                let opt = try HTTP.GET("http://demo5073670.mockable.io/login")
+                opt.start { response in
+                    if let err = response.error {
+                        print(">>> error: \(err.localizedDescription)")
+                        return //also notify app of failure as needed
+                    }
+                    print(">>> opt finished:\n \(response.description)")
+                    let data = JSON(response.data)
+                    if let isSuccess = data["success"].bool {
+                        print("isSuccess: \(isSuccess)")
+                        DispatchQueue.main.async {
+                            if isSuccess {
+                                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                                mainVC.mUserName = self.userName.text!
+                                
+                                self.navigationController?.show(mainVC, sender: nil)
+                            } else{
+                                self.lbErrorMsg.text = "Login false"
+                            }
+                        }
+                    }
+                }
+            } catch let error {
+                print("got an error creating the request: \(error)")
+                mLoadingView.stopAnimating()
+            }
+            mLoadingView.stopAnimating()
         } else {
             // show error
             lbErrorMsg.text = "Wrong username or password"

@@ -122,6 +122,10 @@
                                 <color key="textColor" red="1" green="0.34546231903601299" blue="0.32987944790567947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yD3-dd-dMZ">
+                                <rect key="frame" x="177" y="380" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -144,6 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="lbErrorMsg" destination="RZF-MP-CW0" id="7mT-f6-uSv"/>
+                        <outlet property="mLoadingView" destination="yD3-dd-dMZ" id="vID-6v-iFr"/>
                         <outlet property="password" destination="YUJ-Ue-1Ng" id="jUV-uT-cjz"/>
                         <outlet property="userName" destination="qa7-zy-fAg" id="bTv-Wk-yT6"/>
                         <segue destination="kQY-df-N2U" kind="show" identifier="gotoMain" id="Yda-0K-Xst"/>

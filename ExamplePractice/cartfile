@@ -1,2 +1,5 @@
 # request API
-github "daltoniam/SwiftHTTP" ~> 2.0.0
+# github "daltoniam/SwiftHTTP" ~> 2.0.0
+
+# parse json
+github "SwiftyJSON/SwiftyJSON"
