@@ -20,21 +20,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var lbErrorMsg: UILabel!
     
-    var alertController = UIAlertController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
-        
-        // init spinnerIndicator
-        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
-        spinnerIndicator.color = UIColor.black
-        spinnerIndicator.startAnimating()
-        
-        alertController.view.addSubview(spinnerIndicator)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +33,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func doLogin(_ sender: UIButton) {
         print(">>> LoginViewController doLogin")
+        
+        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        
+        // init spinnerIndicator
+        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        
+        alertController.view.addSubview(spinnerIndicator)
         
         if userName.text == "vinh", password.text == "123" {
             // show progress dialog
@@ -57,7 +55,7 @@ class LoginViewController: UIViewController {
                         print(">>> error: \(err.localizedDescription)")
                         return //also notify app of failure as needed
                     }
-                    print(">>> opt finished:\n \(response.description)")
+                    
                     let data = JSON(response.data)
                     if let isSuccess = data["success"].bool {
                         print("isSuccess: \(isSuccess)")
@@ -74,18 +72,22 @@ class LoginViewController: UIViewController {
                     }
                     
                     DispatchQueue.main.async {
-                        self.alertController.dismiss(animated: true, completion: nil);
+                        self.hideLoadingDialog(alertController);
                     }
                 }
             } catch let error {
                 print("got an error creating the request: \(error)")
-                alertController.dismiss(animated: true, completion: nil);
+                self.hideLoadingDialog(alertController);
             }
             
         } else {
             // show error
             lbErrorMsg.text = "Wrong username or password"
         }
+    }
+    
+    func hideLoadingDialog(_ alertController: UIAlertController!){
+        alertController.dismiss(animated: true, completion: nil);
     }
     
 }
