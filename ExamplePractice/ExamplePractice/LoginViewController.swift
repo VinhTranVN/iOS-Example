@@ -12,17 +12,28 @@ import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
+    let URL_LOGIN = "http://595df587d7210a0011ddabc6.mockapi.io/api/login"
+    
     @IBOutlet weak var userName: UITextField!
 
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var lbErrorMsg: UILabel!
     
-    @IBOutlet weak var mLoadingView: UIActivityIndicatorView!
+    var alertController = UIAlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        
+        // init spinnerIndicator
+        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        
+        alertController.view.addSubview(spinnerIndicator)
         
     }
     
@@ -36,9 +47,11 @@ class LoginViewController: UIViewController {
         print(">>> LoginViewController doLogin")
         
         if userName.text == "vinh", password.text == "123" {
-            mLoadingView.startAnimating()
+            // show progress dialog
+            self.present(alertController, animated: false, completion: nil)
+
             do {
-                let opt = try HTTP.GET("http://595df587d7210a0011ddabc6.mockapi.io/api/login")
+                let opt = try HTTP.GET(URL_LOGIN)
                 opt.start { response in
                     if let err = response.error {
                         print(">>> error: \(err.localizedDescription)")
@@ -59,12 +72,16 @@ class LoginViewController: UIViewController {
                             }
                         }
                     }
+                    
+                    DispatchQueue.main.async {
+                        self.alertController.dismiss(animated: true, completion: nil);
+                    }
                 }
             } catch let error {
                 print("got an error creating the request: \(error)")
-                mLoadingView.stopAnimating()
+                alertController.dismiss(animated: true, completion: nil);
             }
-            mLoadingView.stopAnimating()
+            
         } else {
             // show error
             lbErrorMsg.text = "Wrong username or password"
