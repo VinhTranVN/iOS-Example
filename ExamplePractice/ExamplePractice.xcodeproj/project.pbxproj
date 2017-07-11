@@ -18,6 +18,9 @@
 		D848B5661F0E319B0093C718 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D848B5641F0E319B0093C718 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D849A5EC1F0D42E8007C176D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5E81F0D42E8007C176D /* LaunchScreen.storyboard */; };
 		D849A5ED1F0D42E8007C176D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5EA1F0D42E8007C176D /* Main.storyboard */; };
+		D89E02B61F14B20700BA018C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */; };
+		D89E02B81F14B59100BA018C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02B71F14B59100BA018C /* FriendTableViewController.swift */; };
+		D89E02BD1F14B70600BA018C /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02BC1F14B70600BA018C /* Friend.swift */; };
 		D8F158981F0CE7ED000B47C9 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */; };
 		D8F158991F0CE7ED000B47C9 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		D848B5641F0E319B0093C718 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		D849A5E91F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D849A5EB1F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		D89E02B71F14B59100BA018C /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
+		D89E02BC1F14B70600BA018C /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = model/Friend.swift; sourceTree = "<group>"; };
 		D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = Carthage/Build/iOS/SwiftHTTP.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,12 +140,16 @@
 		D84715801F063D9000DA98BD /* ExamplePractice */ = {
 			isa = PBXGroup;
 			children = (
+				D89E02BE1F14E42F00BA018C /* features */,
+				D89E02BB1F14B6F700BA018C /* model */,
 				D81C18891F0CFA1E0029C462 /* storyboards */,
 				D84715811F063D9000DA98BD /* AppDelegate.swift */,
 				D84715831F063D9000DA98BD /* StartViewController.swift */,
 				D847158D1F063D9000DA98BD /* Info.plist */,
 				D836353D1F0B79EB00EB8FE0 /* LoginViewController.swift */,
 				D836353F1F0B87FA00EB8FE0 /* MainViewController.swift */,
+				D89E02B71F14B59100BA018C /* FriendTableViewController.swift */,
+				D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */,
 				D84715881F063D9000DA98BD /* Assets.xcassets */,
 			);
 			path = ExamplePractice;
@@ -161,6 +171,29 @@
 				D84715A31F063D9000DA98BD /* Info.plist */,
 			);
 			path = ExamplePracticeUITests;
+			sourceTree = "<group>";
+		};
+		D89E02BB1F14B6F700BA018C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D89E02BC1F14B70600BA018C /* Friend.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		D89E02BE1F14E42F00BA018C /* features */ = {
+			isa = PBXGroup;
+			children = (
+				D89E02BF1F14E44300BA018C /* friends */,
+			);
+			name = features;
+			sourceTree = "<group>";
+		};
+		D89E02BF1F14E44300BA018C /* friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = friends;
 			sourceTree = "<group>";
 		};
 		D8F158961F0CE7BE000B47C9 /* frameworks */ = {
@@ -312,8 +345,11 @@
 			files = (
 				D836353E1F0B79EB00EB8FE0 /* LoginViewController.swift in Sources */,
 				D84715841F063D9000DA98BD /* StartViewController.swift in Sources */,
+				D89E02B61F14B20700BA018C /* FriendTableViewCell.swift in Sources */,
 				D84715821F063D9000DA98BD /* AppDelegate.swift in Sources */,
 				D83635401F0B87FA00EB8FE0 /* MainViewController.swift in Sources */,
+				D89E02B81F14B59100BA018C /* FriendTableViewController.swift in Sources */,
+				D89E02BD1F14B70600BA018C /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
