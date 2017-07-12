@@ -10,7 +10,7 @@ import UIKit
 import SwiftHTTP
 import SwiftyJSON
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, DataRequestCallback {
     
     let URL_LOGIN = "http://595df587d7210a0011ddabc6.mockapi.io/api/login"
     
@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var lbErrorMsg: UILabel!
+    
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,7 @@ class LoginViewController: UIViewController {
     @IBAction func doLogin(_ sender: UIButton) {
         print(">>> LoginViewController doLogin")
         
-        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
         
         // init spinnerIndicator
         let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -42,43 +44,12 @@ class LoginViewController: UIViewController {
         spinnerIndicator.color = UIColor.black
         spinnerIndicator.startAnimating()
         
-        alertController.view.addSubview(spinnerIndicator)
+        alertController?.view.addSubview(spinnerIndicator)
         
         if userName.text == "vinh", password.text == "123" {
             // show progress dialog
-            self.present(alertController, animated: false, completion: nil)
-
-            do {
-                let opt = try HTTP.GET(URL_LOGIN)
-                opt.start { response in
-                    if let err = response.error {
-                        print(">>> error: \(err.localizedDescription)")
-                        return //also notify app of failure as needed
-                    }
-                    
-                    let data = JSON(response.data)
-                    if let isSuccess = data["success"].bool {
-                        print("isSuccess: \(isSuccess)")
-                        DispatchQueue.main.async {
-                            if isSuccess {
-                                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-                                mainVC.mUserName = data["full_name"].stringValue
-                                
-                                self.navigationController?.show(mainVC, sender: nil)
-                            } else{
-                                self.lbErrorMsg.text = "Login false"
-                            }
-                        }
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.hideLoadingDialog(alertController);
-                    }
-                }
-            } catch let error {
-                print("got an error creating the request: \(error)")
-                self.hideLoadingDialog(alertController);
-            }
+            self.present(alertController!, animated: false, completion: nil)
+            DataLoaderUtil.requestGET(URL_LOGIN, callBack: self)
             
         } else {
             // show error
@@ -89,5 +60,26 @@ class LoginViewController: UIViewController {
     func hideLoadingDialog(_ alertController: UIAlertController!){
         alertController.dismiss(animated: true, completion: nil);
     }
+ 
+    func onFailure() {
+        print("got an error creating the request")
+        self.hideLoadingDialog(alertController);
+    }
     
+    func onSuccess(jsonData data: JSON) {
+        if let isSuccess = data["success"].bool {
+            print("isSuccess: \(isSuccess)")
+            if isSuccess {
+                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                mainVC.mUserName = data["full_name"].stringValue
+                
+                self.navigationController?.show(mainVC, sender: nil)
+            } else{
+                self.lbErrorMsg.text = "Login false"
+            }
+        }
+        
+        self.hideLoadingDialog(alertController);
+
+    }
 }

@@ -18,9 +18,15 @@
 		D848B5661F0E319B0093C718 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D848B5641F0E319B0093C718 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D849A5EC1F0D42E8007C176D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5E81F0D42E8007C176D /* LaunchScreen.storyboard */; };
 		D849A5ED1F0D42E8007C176D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D849A5EA1F0D42E8007C176D /* Main.storyboard */; };
-		D89E02B61F14B20700BA018C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */; };
-		D89E02B81F14B59100BA018C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02B71F14B59100BA018C /* FriendTableViewController.swift */; };
 		D89E02BD1F14B70600BA018C /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E02BC1F14B70600BA018C /* Friend.swift */; };
+		D8D08E6D1F15240800F7428F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E6C1F15240800F7428F /* UserRepository.swift */; };
+		D8D08E731F1526A100F7428F /* LocalUserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E721F1526A100F7428F /* LocalUserRepositoryImpl.swift */; };
+		D8D08E751F1526AC00F7428F /* RemoteUserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E741F1526AC00F7428F /* RemoteUserRepositoryImpl.swift */; };
+		D8D08E771F15290E00F7428F /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E761F15290E00F7428F /* UserRepositoryImpl.swift */; };
+		D8D08E791F160D7600F7428F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E781F160D7600F7428F /* DataProvider.swift */; };
+		D8D08E7C1F1611F500F7428F /* DataLoaderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D08E7B1F1611F500F7428F /* DataLoaderUtil.swift */; };
+		D8DC98DB1F151FC8008B4574 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC98D91F151FC8008B4574 /* FriendTableViewCell.swift */; };
+		D8DC98DC1F151FC8008B4574 /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC98DA1F151FC8008B4574 /* FriendTableViewController.swift */; };
 		D8F158981F0CE7ED000B47C9 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */; };
 		D8F158991F0CE7ED000B47C9 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -74,9 +80,15 @@
 		D848B5641F0E319B0093C718 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		D849A5E91F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D849A5EB1F0D42E8007C176D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
-		D89E02B71F14B59100BA018C /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		D89E02BC1F14B70600BA018C /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = model/Friend.swift; sourceTree = "<group>"; };
+		D8D08E6C1F15240800F7428F /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserRepository.swift; path = data/UserRepository.swift; sourceTree = "<group>"; };
+		D8D08E721F1526A100F7428F /* LocalUserRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalUserRepositoryImpl.swift; path = data/local/LocalUserRepositoryImpl.swift; sourceTree = "<group>"; };
+		D8D08E741F1526AC00F7428F /* RemoteUserRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteUserRepositoryImpl.swift; path = data/remote/RemoteUserRepositoryImpl.swift; sourceTree = "<group>"; };
+		D8D08E761F15290E00F7428F /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserRepositoryImpl.swift; path = data/UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		D8D08E781F160D7600F7428F /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = data/DataProvider.swift; sourceTree = "<group>"; };
+		D8D08E7B1F1611F500F7428F /* DataLoaderUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataLoaderUtil.swift; path = utils/DataLoaderUtil.swift; sourceTree = "<group>"; };
+		D8DC98D91F151FC8008B4574 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = feature/friends/FriendTableViewCell.swift; sourceTree = "<group>"; };
+		D8DC98DA1F151FC8008B4574 /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewController.swift; path = feature/friends/FriendTableViewController.swift; sourceTree = "<group>"; };
 		D8F158971F0CE7ED000B47C9 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = Carthage/Build/iOS/SwiftHTTP.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +152,8 @@
 		D84715801F063D9000DA98BD /* ExamplePractice */ = {
 			isa = PBXGroup;
 			children = (
+				D8D08E7A1F16114500F7428F /* utils */,
+				D8D08E6B1F1523C100F7428F /* data */,
 				D89E02BE1F14E42F00BA018C /* features */,
 				D89E02BB1F14B6F700BA018C /* model */,
 				D81C18891F0CFA1E0029C462 /* storyboards */,
@@ -148,8 +162,6 @@
 				D847158D1F063D9000DA98BD /* Info.plist */,
 				D836353D1F0B79EB00EB8FE0 /* LoginViewController.swift */,
 				D836353F1F0B87FA00EB8FE0 /* MainViewController.swift */,
-				D89E02B71F14B59100BA018C /* FriendTableViewController.swift */,
-				D89E02B51F14B20700BA018C /* FriendTableViewCell.swift */,
 				D84715881F063D9000DA98BD /* Assets.xcassets */,
 			);
 			path = ExamplePractice;
@@ -192,8 +204,46 @@
 		D89E02BF1F14E44300BA018C /* friends */ = {
 			isa = PBXGroup;
 			children = (
+				D8DC98D91F151FC8008B4574 /* FriendTableViewCell.swift */,
+				D8DC98DA1F151FC8008B4574 /* FriendTableViewController.swift */,
 			);
 			name = friends;
+			sourceTree = "<group>";
+		};
+		D8D08E6B1F1523C100F7428F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D8D08E6F1F1525DB00F7428F /* remote */,
+				D8D08E6E1F1525D400F7428F /* local */,
+				D8D08E6C1F15240800F7428F /* UserRepository.swift */,
+				D8D08E761F15290E00F7428F /* UserRepositoryImpl.swift */,
+				D8D08E781F160D7600F7428F /* DataProvider.swift */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		D8D08E6E1F1525D400F7428F /* local */ = {
+			isa = PBXGroup;
+			children = (
+				D8D08E721F1526A100F7428F /* LocalUserRepositoryImpl.swift */,
+			);
+			name = local;
+			sourceTree = "<group>";
+		};
+		D8D08E6F1F1525DB00F7428F /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				D8D08E741F1526AC00F7428F /* RemoteUserRepositoryImpl.swift */,
+			);
+			name = remote;
+			sourceTree = "<group>";
+		};
+		D8D08E7A1F16114500F7428F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D8D08E7B1F1611F500F7428F /* DataLoaderUtil.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		D8F158961F0CE7BE000B47C9 /* frameworks */ = {
@@ -344,12 +394,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D836353E1F0B79EB00EB8FE0 /* LoginViewController.swift in Sources */,
+				D8D08E791F160D7600F7428F /* DataProvider.swift in Sources */,
 				D84715841F063D9000DA98BD /* StartViewController.swift in Sources */,
-				D89E02B61F14B20700BA018C /* FriendTableViewCell.swift in Sources */,
+				D8D08E771F15290E00F7428F /* UserRepositoryImpl.swift in Sources */,
+				D8D08E751F1526AC00F7428F /* RemoteUserRepositoryImpl.swift in Sources */,
+				D8D08E731F1526A100F7428F /* LocalUserRepositoryImpl.swift in Sources */,
 				D84715821F063D9000DA98BD /* AppDelegate.swift in Sources */,
 				D83635401F0B87FA00EB8FE0 /* MainViewController.swift in Sources */,
-				D89E02B81F14B59100BA018C /* FriendTableViewController.swift in Sources */,
+				D8D08E7C1F1611F500F7428F /* DataLoaderUtil.swift in Sources */,
 				D89E02BD1F14B70600BA018C /* Friend.swift in Sources */,
+				D8D08E6D1F15240800F7428F /* UserRepository.swift in Sources */,
+				D8DC98DB1F151FC8008B4574 /* FriendTableViewCell.swift in Sources */,
+				D8DC98DC1F151FC8008B4574 /* FriendTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
