@@ -15,27 +15,18 @@ class DataLoaderUtil {
     }
     
     static func requestGET(_ url: String, callBack requestCallback: DataRequestCallback) {
-        do {
-            let opt = try HTTP.GET(url)
-            opt.start { response in
-                if let err = response.error {
-                    print(">>> error: \(err.localizedDescription)")
-                    DispatchQueue.main.async {
-                        requestCallback.onFailure()
-                    }
-                    return
-                }
-                
-                // TODO: dispatch data to main thread
+        HTTP.GET(url) { response in
+            if let err = response.error {
+                print(">>> error: \(err.localizedDescription)")
                 DispatchQueue.main.async {
-                    requestCallback.onSuccess(jsonData: JSON(response.data))
+                    requestCallback.onFailure()
                 }
+                return
             }
-        } catch let error {
-            print("got an error creating the request: \(error)")
-            // TODO dispatch error
+            
+            // TODO: dispatch data to main thread
             DispatchQueue.main.async {
-                requestCallback.onFailure()
+                requestCallback.onSuccess(jsonData: JSON(response.data))
             }
         }
 
